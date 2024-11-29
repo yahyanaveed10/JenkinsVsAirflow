@@ -1,0 +1,21 @@
+[2024-11-29T18:03:55.632+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-29T18:03:55.659+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: demo.print_the_hi scheduled__2022-06-07T00:00:00+00:00 [queued]>
+[2024-11-29T18:03:55.676+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: demo.print_the_hi scheduled__2022-06-07T00:00:00+00:00 [queued]>
+[2024-11-29T18:03:55.678+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-29T18:03:55.706+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): print_the_hi> on 2022-06-07 00:00:00+00:00
+[2024-11-29T18:03:55.721+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1280) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-29T18:03:55.723+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'demo', 'print_the_hi', 'scheduled__2022-06-07T00:00:00+00:00', '--job-id', '504', '--raw', '--subdir', 'DAGS_FOLDER/zAGI/hello.py', '--cfg-path', '/tmp/tmp7j62i267']
+[2024-11-29T18:03:55.726+0000] {standard_task_runner.py:105} INFO - Job 504: Subtask print_the_hi
+[2024-11-29T18:03:55.725+0000] {standard_task_runner.py:72} INFO - Started process 1284 to run task
+[2024-11-29T18:03:55.897+0000] {task_command.py:467} INFO - Running <TaskInstance: demo.print_the_hi scheduled__2022-06-07T00:00:00+00:00 [running]> on host 080dcf124ece
+[2024-11-29T18:03:56.020+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='demo' AIRFLOW_CTX_TASK_ID='print_the_hi' AIRFLOW_CTX_EXECUTION_DATE='2022-06-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-06-07T00:00:00+00:00'
+[2024-11-29T18:03:56.022+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-29T18:03:56.024+0000] {logging_mixin.py:190} INFO - hello world
+[2024-11-29T18:03:56.026+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-11-29T18:03:56.048+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-29T18:03:56.049+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=demo, task_id=print_the_hi, run_id=scheduled__2022-06-07T00:00:00+00:00, execution_date=20220607T000000, start_date=20241129T180355, end_date=20241129T180356
+[2024-11-29T18:03:56.108+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-29T18:03:56.131+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-29T18:03:56.132+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

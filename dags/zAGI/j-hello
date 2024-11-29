@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World from Jenkins Pipeline!'
+
+                script {
+                    def message = 'Groovy says hi!'
+                    println message
+
+                    // Demonstrate some basic Groovy functionality
+                    def currentTime = new Date().format('yyyy-MM-dd HH:mm:ss')
+                    echo "Current time is: ${currentTime}"
+                }
+            }
+        }
+
+        stage('Environment') {
+            steps {
+                sh 'printenv'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
