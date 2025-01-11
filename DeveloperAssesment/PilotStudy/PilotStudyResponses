@@ -1,0 +1,38 @@
+Participant1
+
+Tasks: General Observation Guidelines.  Could change the first sentence to “keep in mind your experience with Jenkis” – unclear
+
+Task 2:
+Push and Pull Xcom is unclear. How does push Xcom relate to getting temperature?
+
+What does Task dependency management mean?
+Is Data passsing between tasks visualised in the code or UI?
+Key Areas to check should be above Observation Points.
+Isn’t System response the same as Logs?
+
+Participant 2
+
+Technical terms were pretty clear.
+
+the task sequence progressed from the basic to a higher level which was good and made sense.
+
+The use of libraries which you would need should be mentioned in the prerequisites of the tasks so that the user can install them before hand.
+
+Things were clear just a bit more detailed steps on the tasks.
+
+Additional information about the working of airflow and a little bit background would be helpful. Moreover attaching some links within the document so that the user can go through them on their own would also be helpful.
+
+the questions were clear.
+A few questions happened to have the same answer.
+
+the questionnaire flow was very well written and progressed and transitioned slowly from one technology to another and then to their comparison
+
+Participant 3
+
+For Tasks:
+
+- Tasks were a bit complicated, some things like the "push" "pull" in xcoms were unclear.
+- The tasks couldve been more detailed.
+- Wordings were a bit unambiguous.
+- Too many questions.
+- Some of the questions had the same answer.

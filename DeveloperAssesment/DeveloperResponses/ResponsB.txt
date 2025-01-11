@@ -1,0 +1,99 @@
+RESPONSE B:
+
+Q1: Describe situations where you encountered system errors or failures. How did each system help or hinder your troubleshooting process?
+
+Consider: 
+
+•  What types of problems did you encounter?
+
+•  How effective were the tools and logs for identifying and resolving the root cause?
+
+• Did any system-specific mechanisms simplify or complicate troubleshooting?
+
+ANS:
+
+In my opinion Airflow is faster in applying changes. This helps to analyse problems faster. I´ve faced a problem with xcom. The logs helped me to identify the location of the problem very fast. However due to the time I wasn´t able to fix this problem
+
+
+
+Q2: What differences did you notice between Jenkins and Airflow when implementing and running different tasks 
+(for e.g Splunk exporters)?
+
+Consider:
+
+How smoothly did regular tasks execute in each system?
+
+What challenges did you face while designing and deploying workflows?
+
+Which system offered better performance for initial setup and execution?
+
+
+ANS: 
+Jenkins is using several programming languages. Airflow is using only Python which makes it easier in comparison to Jenkins.
+
+
+Q3: How did each system's monitoring capabilities affect your ability to track tasks (for e.g Splunk exporters) performance
+Consider
+
+• Monitoring Capabilities
+
+• System feedback mechanisms
+
+• Workflow visibility
+
+Ans: Both systems are showing the tasks in a different way. For me both ways are fine. I would´t say that some of them are better than the other
+
+Q4: During your implementation of Tasks (for e.g Splunk exporters) and running them parallel, what challenges or improvements did you notice when the systems were under heavy load?
+
+Consider:
+
+•  What happened to your exporters during peak times?
+
+•  How did both systems react in terms of execution, scalability?
+
+•  Which system offered more task reliability?
+
+
+ANS: 
+Airflow uses ressources in a more efficient way.
+
+Q5: What were the most significant challenges you encountered with each system?
+
+
+
+Consider:
+
+• Technical limitations
+
+• Implementation difficulties
+
+• Resolution approaches
+
+Ans:
+Understand the whole Jenkins system due to relatively high complexity. In Airflow get the understanding about the new infractructure (OpenShift).
+
+Which system demonstrates greater flexibility in adapting to new requirements?
+
+Consider: 
+
+• In your opinion, which system has a broader scope for advanced use cases?
+
+ANS:
+Airflow due to usage of OpenShift.
+Additional Comments
+
+Q6: Please share any other thoughts or insights about your experience with both systems:
+
+
+
+Consider:
+
+
+
+Overall Peformance in terms scalability, execution times, Reliability & Consistency
+
+Maintenance, Debugging, Workflow Management..
+
+ANS:Airflow offers a scalable solution which is quite easy to learn in comparison to Jenkins.
+
+

@@ -1,0 +1,108 @@
+RESPONSE A:
+
+Q1: Describe situations where you encountered system errors or failures. How did each system help or hinder your troubleshooting process?
+
+Consider: 
+
+•  What types of problems did you encounter?
+
+•  How effective were the tools and logs for identifying and resolving the root cause?
+
+• Did any system-specific mechanisms simplify or complicate troubleshooting?
+
+ANS:
+
+The problems I encountered where related with the connection to other systems not Airflow specific. The logs helped to identified the problem and fixed the issue was matter of seconds. 
+I found quite comfortable the "Pipeline as code" mechanism, which simplified the complexity of the development task. 
+The "Task 2" was impossible to develop it in Jenkins without a system in between like a sharedfolder or something like that, what increased the complexity of the task being impossible to resolve it in 45min. On the other hand it was really simple to resolve the issue using Airflow and the XCom mechanism.
+
+
+Q2: What differences did you notice between Jenkins and Airflow when implementing and running different tasks 
+(for e.g Splunk exporters)?
+
+Consider:
+
+How smoothly did regular tasks execute in each system?
+
+What challenges did you face while designing and deploying workflows?
+
+Which system offered better performance for initial setup and execution?
+
+
+ANS: 
+In both cases the execution was smoothly. The biggest different between Jenkins and Airflow during configuring Splunk exporter was that in Jenkins you need like two levels of configuration, first in jenkins adding a new pipeline element and configuring it and then at the automation script level. It cost a lot of time to perform the setup for jenkins, however it took just a couple of minutes to create the setup for Airflow. 
+At the End the better performance was for Airflow because the jenkins was way too slow creating working nodes and executing the task on them.
+
+
+
+Q3: How did each system's monitoring capabilities affect your ability to track tasks (for e.g Splunk exporters) performance
+Consider
+
+• Monitoring Capabilities
+
+• System feedback mechanisms
+
+• Workflow visibility
+
+Ans: In both systems was possible to monitor the status of the execution. Both logs are plenty with information and also Workflow Visibility is available in both systems.
+
+
+
+Q4: During your implementation of Tasks (for e.g Splunk exporters) and running them parallel, what challenges or improvements did you notice when the systems were under heavy load?
+
+Consider:
+
+•  What happened to your exporters during peak times?
+
+•  How did both systems react in terms of execution, scalability?
+
+•  Which system offered more task reliability?
+
+
+ANS: 
+the main problems during peak times and scalability ware the way Jenkins was using the resources. It was way to slow assigning working nodes in comparison with Airflow. Airflow offered more task reliability and was faster
+
+Q5: What were the most significant challenges you encountered with each system?
+
+
+
+Consider:
+
+• Technical limitations
+
+• Implementation difficulties
+
+• Resolution approaches
+
+Ans:
+In case of Jenkins, the use of something similar like XComs (Task2) was impossible to implement. 
+To mention some implementation difficulties in Airflow, we increased the difficulty of task 5 and tried to connect of Airflow with another Kubernetes Cluster different from the one configured by Yahya during his Thesis. It was not really clear the steps to perform the connection but with some research and Airflow documentation was pretty easy to deploy an Image in Container Registry and use it in the a new Kubernetes Cluster.
+
+
+Which system demonstrates greater flexibility in adapting to new requirements?
+
+Consider: 
+
+• In your opinion, which system has a broader scope for advanced use cases?
+
+ANS:
+Without any doubts Airflow is prepared for more complex task and scalabity challenges in combination with Opershift or Kubernetes. 
+
+
+Additional Comments
+
+Q6: Please share any other thoughts or insights about your experience with both systems:
+
+
+
+Consider:
+
+
+
+Overall Peformance in terms scalability, execution times, Reliability & Consistency
+
+Maintenance, Debugging, Workflow Management..
+
+
+
+

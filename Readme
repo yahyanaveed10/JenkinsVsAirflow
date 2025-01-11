@@ -1,0 +1,10 @@
+THIS REPOSITORY IS ABOUT MY THESIS: Performance evaluation of Splunk exporters in a Kubernetes environment using Airflow
+
+
+Statistical Analysis: You can find the statistical Analysis script under Statistical Analysis, which calcultes the cohen's d, Shapiro-Wilk Test and Wilcoxon Signed-Rank Test.
+
+SystemImplementation: This Folder contains the Data collection Scripts, Airflow and Jenkins Pipeline examples for Splunk Exporters.
+
+AnalysisData: This folder contains all the visualisation of the CPU and memory utilization respectively, queries used to visualise the images in Grafana and finally the raw metrics of the database.
+
+DeveloperAssesment: This folder contains the scripts to calculate the score and the thematic analysis, furthermore, the responses from the developers and the Pilot Study.

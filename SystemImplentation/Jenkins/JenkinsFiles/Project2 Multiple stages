@@ -1,0 +1,243 @@
+library "<library>"
+@Library('lib')
+import org.utils.*
+import org.scm.*
+import org.projectConfigs.*
+
+// General Project Configuration
+def projectId = "Project2"
+
+
+// General Configuration
+def ntCredential = "${settings()[productline]['userid_nt']}"
+def gitCredential = "${settings()[productline]['userid_ssh']}"
+
+//Agent definition
+def workerAgentLabel ="buildslaves_si-zeng03w013 && swarm"
+
+//Components controllers
+def logger = new Logger(this)
+
+
+
+//Stashes dictionary
+def stashNames = [
+
+'Exporter' : 'output_exporter',
+
+]
+
+
+pipeline {
+  options { preserveStashes() }
+
+  agent { label workerAgentLabel }
+
+  stages {
+
+   // stage('Export Data') {
+     // parallel {
+      stage('Export Exporter0') {
+        //  agent { label workerAgentLabel }
+          steps {
+            script{
+              if("${Export}"=="true"){
+                println("\033[0;34m\n\n" +
+                "####################################################################################################\n\n" +
+                "   S T A G E :  exporter EXPORT SKIPPED  ".center(100, " ") + "\n\n" +
+                "####################################################################################################\n\n\033[0m")
+              }
+              else{
+                handleStash(projectId, "export") {
+                  invokeDownload(
+                    ntCredential,
+                    "${env.WORKSPACE}\\exporter",
+                    "exporter.jar")
+
+                  echo "Export exporter"
+                  dir('exporter/exporter') {
+                    withCredentials([usernamePassword(credentialsId: "${ntCredential}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                      invokeexportexecution("${workspace}\\exporter\\", ntCredential, exporter_server_string, variables, "${workspace}\\${projectId}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      stage('Export Exporter1') {
+        //  agent { label workerAgentLabel }
+          steps {
+            script{
+              if("${Export}"=="true"){
+                println("\033[0;34m\n\n" +
+                "####################################################################################################\n\n" +
+                "   S T A G E :  exporter EXPORT SKIPPED  ".center(100, " ") + "\n\n" +
+                "####################################################################################################\n\n\033[0m")
+              }
+              else{
+                handleStash(projectId, "export") {
+                  invokeDownload(
+                    ntCredential,,
+                    "${env.WORKSPACE}\\exporter",
+                    "exporter.jar")
+
+                  echo "Export exporter"
+                  dir('exporter/exporter') {
+                    withCredentials([usernamePassword(credentialsId: "${ntCredential}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                      invokeexportexecution("${workspace}\\exporter\\", ntCredential, exporter_server_string, variables, "${workspace}\\${projectId}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      stage('Export Exporter2') {
+        //  agent { label workerAgentLabel }
+          steps {
+            script{
+              if("${Export}"=="true"){
+                println("\033[0;34m\n\n" +
+                "####################################################################################################\n\n" +
+                "   S T A G E :  exporter EXPORT SKIPPED  ".center(100, " ") + "\n\n" +
+                "####################################################################################################\n\n\033[0m")
+              }
+              else{
+                handleStash(projectId, "export") {
+                  invokeDownload(
+                    ntCredential,,
+                    "${env.WORKSPACE}\\exporter",
+                    "exporter.jar")
+
+                  echo "Export exporter"
+                  dir('exporter/exporter') {
+                    withCredentials([usernamePassword(credentialsId: "${ntCredential}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                      invokeexportexecution("${workspace}\\exporter\\", ntCredential, exporter_server_string, variables, "${workspace}\\${projectId}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      stage('Export Exporter3') {
+        //  agent { label workerAgentLabel }
+          steps {
+            script{
+              if("${Export}"=="true"){
+                println("\033[0;34m\n\n" +
+                "####################################################################################################\n\n" +
+                "   S T A G E :  exporter EXPORT SKIPPED  ".center(100, " ") + "\n\n" +
+                "####################################################################################################\n\n\033[0m")
+              }
+              else{
+                handleStash(projectId, "export") {
+                  invokeDownload(
+                    ntCredential,,
+                    "${env.WORKSPACE}\\exporter",
+                    "exporter.jar")
+
+                  echo "Export exporter"
+                  dir('exporter/exporter') {
+                    withCredentials([usernamePassword(credentialsId: "${ntCredential}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                      invokeexportexecution("${workspace}\\exporter\\", ntCredential, exporter_server_string, variables, "${workspace}\\${projectId}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      stage('Export Exporter4') {
+        //  agent { label workerAgentLabel }
+          steps {
+            script{
+              if("${Export}"=="true"){
+                println("\033[0;34m\n\n" +
+                "####################################################################################################\n\n" +
+                "   S T A G E :  exporter EXPORT SKIPPED  ".center(100, " ") + "\n\n" +
+                "####################################################################################################\n\n\033[0m")
+              }
+              else{
+                handleStash(projectId, "export") {
+                  invokeDownload(
+                    ntCredential,,
+                    "${env.WORKSPACE}\\exporter",
+                    "exporter.jar")
+
+                  echo "Export exporter"
+                  dir('exporter/exporter') {
+                    withCredentials([usernamePassword(credentialsId: "${ntCredential}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                      invokeexportexecution("${workspace}\\exporter\\", ntCredential, exporter_server_string, variables, "${workspace}\\${projectId}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      stage('Export Exporter5') {
+        //  agent { label workerAgentLabel }
+          steps {
+            script{
+              if("${Export}"=="true"){
+                println("\033[0;34m\n\n" +
+                "####################################################################################################\n\n" +
+                "   S T A G E :  exporter EXPORT SKIPPED  ".center(100, " ") + "\n\n" +
+                "####################################################################################################\n\n\033[0m")
+              }
+              else{
+                handleStash(projectId, "export") {
+                  invokeDownload(
+                    ntCredential,,
+                    "${env.WORKSPACE}\\exporter",
+                    "exporter.jar")
+
+                  echo "Export exporter"
+                  dir('exporter/exporter') {
+                    withCredentials([usernamePassword(credentialsId: "${ntCredential}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                      invokeexportexecution("${workspace}\\exporter\\", ntCredential, exporter_server_string, variables, "${workspace}\\${projectId}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+   //   }
+  //  }
+
+
+    stage('Stash download results after export'){
+      steps{
+        script{
+
+            stashDownloadResults(stashNames,projectId)
+
+        }
+      }
+    }
+
+
+
+    stage('Publish to Splunk Server') {
+      steps {
+        script{
+            publish(
+            projectId,
+            splunkServerConfig,
+            false)
+
+        }
+      }
+    }
+
+  }
+}
+

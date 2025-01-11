@@ -1,0 +1,109 @@
+library "<library>"
+@Library('lib') 
+import org.utils.*
+import org.scm.*
+import org.projectConfigs.*
+
+// General Project Configuration
+def projectId = "Project1" 
+
+// General Configuration
+def ntCredential = "${settings()[productline]['userid_nt']}"
+def gitCredential = "${settings()[productline]['userid_ssh']}"
+
+//Agent definition
+def workerAgentLabel ="buildslaves_si-zeng03w013 && swarm"
+
+//Components controllers
+def logger = new Logger(this)
+
+
+
+//Stashes dictionary
+def stashNames = [
+
+'Exporter' : 'output_exporter',
+
+]
+
+
+println "Preprocessing: Initial Context Log"
+println "Current Environment: ${env}"
+
+def preProcessMethod() {
+    println "Pre-Pipeline Processing Method"
+    println "Job Name from Method: ${env.JOB_NAME}"
+}
+
+preProcessMethod()
+
+pipeline {
+  options { preserveStashes() }
+
+  agent { label workerAgentLabel }
+
+  stages {
+
+
+  //  stage('Export Data') {
+//      parallel {
+      stage('Export Exporter') {
+        //  agent { label workerAgentLabel }
+          steps {
+            script{
+              if("${Export}"=="true"){
+                println("\033[0;34m\n\n" +
+                "####################################################################################################\n\n" +
+                "   S T A G E :  exporter EXPORT SKIPPED  ".center(100, " ") + "\n\n" +
+                "####################################################################################################\n\n\033[0m")
+              }
+              else{
+                handleStash(projectId, "export") {
+                  invokeDownload(
+                    productline,
+                    ntCredential,
+                    exporter_artifcat,
+                    "ARTIFACTORY_BINARY",
+                    "${env.WORKSPACE}\\exporter",
+                    "created",
+                    "exporter.jar")
+
+                  echo "Export exporter"
+                  dir('exporter/exporter') {
+                    withCredentials([usernamePassword(credentialsId: "${ntCredential}", passwordVariable: 'password', usernameVariable: 'username')]) {
+                      invokeexportexecution("${workspace}\\exporter\\", ntCredential, exporter_server_string, variables, "${workspace}\\${projectId}")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+  //    }
+  //  }
+
+
+    stage('Stash download results after export'){
+      steps{
+        script{
+
+            stashDownloadResults(stashNames,projectId)
+        }
+      }
+    }
+
+    stage('Publish to Splunk Server') {
+      steps {
+        script{
+            publish(
+            projectId,
+            splunkServerConfig,
+            false)
+
+        }
+      }
+    }
+  }
+}
+
