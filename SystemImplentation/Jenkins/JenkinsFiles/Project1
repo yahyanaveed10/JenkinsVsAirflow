@@ -60,10 +60,7 @@ pipeline {
               else{
                 handleStash(projectId, "export") {
                   invokeDownload(
-                    productline,
                     ntCredential,
-                    exporter_artifcat,
-                    "ARTIFACTORY_BINARY",
                     "${env.WORKSPACE}\\exporter",
                     "created",
                     "exporter.jar")
