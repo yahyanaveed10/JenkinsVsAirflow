@@ -81,8 +81,6 @@ def load_data_from_csv(file_path):
     """Loads data from a CSV file and performs basic data cleaning."""
     try:
         df = pd.read_csv(file_path)
-        # Assuming your CSV has columns like 'platform', 'pipeline_name', 'avg_execution_time_seconds'
-        # Rename columns if necessary to match the expected column names
         df = df.rename(columns={
             'platform': 'platform',
             'pipeline_name': 'pipeline_name',
