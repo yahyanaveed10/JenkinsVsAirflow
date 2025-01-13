@@ -2,7 +2,7 @@ import pandas as pd
 from collections import defaultdict
 
 
-class MigrationAnalysis:
+class Analysis:
     def __init__(self):
         self.sus_responses = {
             'jenkins_a': [3, 5, 4, 4, 3, 3, 2, 4, 4, 4],
@@ -166,7 +166,7 @@ class MigrationAnalysis:
 
 
 # Usage
-analysis = MigrationAnalysis()
+analysis = Analysis()
 report = analysis.generate_integrated_report()
 
 # Print formatted results
